@@ -45,6 +45,11 @@ Login.prototype.logout = function(sessionId) {
    /*
 	* TODO: Remove the given sessionId from the sessionMap
 	*/
+	var name = this.sessionMap[sessionId].name;
+	var email = this.sessionMap[sessionId].email;
+	delete this.sessionMap[sessionId];
+	//console.log(this.sessionMap[sessionId]);
+	return {"name":name , "email" : email};
 };
 
 // Export the Login class
