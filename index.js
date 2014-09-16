@@ -79,7 +79,7 @@ function put(request, response) {
 	var cookies = request.cookies;
 	if ('session_id' in cookies)
 	{
-		var sid = cookies['seesion_id'];
+		var sid = cookies['session_id'];
 		if (login.isLoggedIn(sid)){
 			
 			var userDetails = login.logout(sid);
@@ -91,7 +91,7 @@ function put(request, response) {
 			response.end("Re-freshed session id\n");
 		}
 		else{
-			response.end("Invalid session_id! Please login agian\n");
+			response.end("Invalid session_id! Please login again\n");
 		}
 	}else {
 		response.end("Please login via HTTP POST\n");
